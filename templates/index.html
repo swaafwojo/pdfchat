@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Chatbot</title>
+</head>
+<body>
+    <h1>PDF Chatbot</h1>
+
+    {% if file_uploaded %}
+        <p>File uploaded successfully. You can now start chatting.</p>
+    {% else %}
+        <form method="post" enctype="multipart/form-data">
+            <label for="pdf_file">Upload PDF:</label>
+            <input type="file" name="pdf_file" accept="application/pdf" required>
+            <button type="submit">Upload</button>
+        </form>
+    {% endif %}
+    
+    <a href="/chat_history">View Chat History</a>
+</body>
+</html>

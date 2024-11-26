@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with the Bot</title>
+</head>
+<body>
+    <h1>Chat with the Bot</h1>
+
+    <div>
+        {% for message in chat_history %}
+            <div><strong>{{ message.role }}:</strong> {{ message.message }}</div>
+        {% endfor %}
+    </div>
+
+    <form action="/chat" method="post">
+        <label for="user_input">Your message:</label>
+        <input type="text" name="user_input" id="user_input" required>
+        <button type="submit">Send</button>
+    </form>
+
+    <a href="/">Back to upload page</a>
+</body>
+</html>
